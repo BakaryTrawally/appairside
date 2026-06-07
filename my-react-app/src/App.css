@@ -1,0 +1,9 @@
+@import "tailwindcss";
+#root {
+  max-width: none;
+  padding: none;
+}
+
+.btn{
+  background-color: skyblue;
+}
