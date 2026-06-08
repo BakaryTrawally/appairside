@@ -92,7 +92,7 @@ const {
         <p className="text-center text-sm text-gray-700 mt-6">
           Don’t have an account?{" "}
           <a 
-          href="/" 
+          href="/register" 
           className="text-red-300 hover:text-pink-400 font-medium">
             back Home
           </a>

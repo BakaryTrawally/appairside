@@ -26,6 +26,7 @@ const router = createHashRouter([
     element: <Home/>
   },
   { path: "/login",  element: <Login />},
+   { path: "/register",  element:<Register/>},
   // 🔒 Protected Routes
   {
     element: (
@@ -35,7 +36,7 @@ const router = createHashRouter([
   ),
     children: [
       { path: "/dataChart",  element:<DataChat/>},
-      { path: "/register",  element:<Register/>},
+      // { path: "/register",  element:<Register/>},
       { path: "/addData", element: <AddData /> },
       { path: "/viewData", element: <ViewData/> },
       { path: "/form", element: <Form/> },
