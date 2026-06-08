@@ -3,9 +3,10 @@ import "../index.css"
 import '../App.css'
 import '../App.css'
 import { Mail, Lock } from "lucide-react";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import api from "../birdstrikeApi/strikeData";
 import { FormContext } from "../pages/FormContext";
+
 
 const Login = () => {
 const {
@@ -91,11 +92,11 @@ const {
         {/* Footer */}
         <p className="text-center text-sm text-gray-700 mt-6">
           Don’t have an account?{" "}
-          <a 
-          href="/" 
+          <Link
+          to ="/register" 
           className="text-red-300 hover:text-pink-400 font-medium">
             back Home
-          </a>
+          </Link>
         </p>
       </div>
     </div>
