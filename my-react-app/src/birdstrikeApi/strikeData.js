@@ -10,10 +10,3 @@ export default axios.create({
     "Content-Type": "application/json",
   },
 });
-
-
-import axios from "axios";
-export default axios.create({
-    // baseURL:"http://localhost:3001"
-    baseURL:"http://localhost:4000/app"  
-})
