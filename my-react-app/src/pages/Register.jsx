@@ -10,36 +10,17 @@ const [email, setEmail] = useState('')
 const [password, setPassword] = useState('')
 
 
-//  const submit= (e) =>{
-//     e.preventDefault();
-//      api.post("/register", { name, email, password })
-//     .then(user => {
-//     // Save user to localStorage
-//       console.log(user.data)
-//       localStorage.setItem("user", JSON.stringify(user.data));
-//     })
-//     .catch(error => console.log(error))
-//     navigate('/')
-//  }
-
- const submit = async (e) => {
-  e.preventDefault();
-
-  try {
-    const response = await api.post("/register", {
-      name,
-      email,
-      password,
-    });
-
-    console.log(response.data);
-    localStorage.setItem("user", JSON.stringify(response.data));
-
-    navigate("/");
-  } catch (error) {
-    console.log(error);
-  }
-};
+ const submit= (e) =>{
+    e.preventDefault();
+     api.post("/register", { name, email, password })
+    .then(user => {
+    // Save user to localStorage
+      console.log(user.data)
+      localStorage.setItem("user", JSON.stringify(user.data));
+    })
+    .catch(error => console.log(error))
+    navigate('/')
+ }
 
   return (
     <div className='d-flex vh-98  mt-3 justify-content-center align-items-center'>
