@@ -1,6 +1,4 @@
 import React, { createContext, useState, useEffect, useMemo, useRef} from "react";
-import { useNavigate} from 'react-router-dom'
-import { } from 'react-router-dom'
 import api from "../birdstrikeApi/strikeData";
 import bg1 from "./images/airstrike.jpg";
 import bg2 from "./images/birdsStrike.jpg"
@@ -15,7 +13,9 @@ import bg9 from "./images/images.jpg"
 
 export const FormContext = createContext();
 
+
 export const FormProvider = ({ children }) => {
+  
   const [formData, setFormData] = useState([]);
   const [fetchError, setFetchError] = useState(null);
   const [error, setError ] = useState(null) 
@@ -44,7 +44,6 @@ export const FormProvider = ({ children }) => {
   const [reportType, setReportType] = useState("monthly");
   const [userName, setUserName] = useState("");
 
-   const navigate = useNavigate();
 // print func
 const chartRef = useRef();
 const handlePrint = () => {
@@ -63,77 +62,77 @@ const handleSubmit = async (e) => {
     if (!date) {
       setError("Field can't be left blank");
       setErrorField("date");
-      return;
+     return false;
     } 
     else if (!operator) {
       setError("Field can't be left blank");
       setErrorField("operator");
-      return;
+      return false;
     } 
     else if (!aircraft) {
       setError("Field can't be left blank");
       setErrorField("aircraft");
-      return;
+      return false;
     }
     else if (!location) {
       setError("Field can't be left blank");
       setErrorField("location");
-      return;
+      return false;
     }
     else if (!timeOfStrike) {
       setError("Field can't be left blank");
       setErrorField("timeOfStrike");
-      return;
+      return false;
     }
     else if (!runWayUsed) {
       setError("Field can't be left blank");
       setErrorField("runWayUsed");
-      return;
+     return false;
     }
     else if (!phaseOfFlight) {
       setError("Field can't be left blank");
       setErrorField("phaseOfFlight");
-      return;
+      return false;
     }
     else if (!effectOnFlight) {
       setError("Field can't be left blank");
       setErrorField("effectOnFlight");
-      return;
+     return false;
     }
     else if (!skyCondition) {
       setError("Field can't be left blank");
       setErrorField("skyCondition");
-      return;
+      return false;
     }
     else if (!precipitation) {
       setError("Field can't be left blank");
       setErrorField("precipitation");
-      return;
+      return false;
     }
     else if (!numberOfBirdsSeen) {
       setError("Field can't be left blank");
       setErrorField("numberOfBirdsSeen");
-      return;
+     return false;
     }
     else if (!numberOfBirdsStruck) {
       setError("Field can't be left blank");
       setErrorField("numberOfBirdsStruck");
-      return;
+     return false;
     }
     else if (!sizeOfBirds) {
       setError("Field can't be left blank");
       setErrorField("sizeOfBirds");
-      return;
+      return false;
     }
     else if (!confirmBirds) {
       setError("Field can't be left blank");
       setErrorField("confirmBirds");
-      return;
+      return false;
     }
     else if (!unconfirmBirds) {
       setError("Field can't be left blank");
       setErrorField("unconfirmBirds");
-      return;
+     return false;
     }
     
     else{   
@@ -159,12 +158,14 @@ const handleSubmit = async (e) => {
         const response = await api.post("/post", formValues);
         // Efficient state update
         setFormData(prev => [...prev, response.data]);
-        navigate('/viewData')
+         clearState();
+      return true; // success
       } catch (err) {
-        console.log(err.message);
+        console.log(err.message) 
+        return false; // failed
       }
 
-      clearState();
+     
 
      }
   };
@@ -186,6 +187,18 @@ const handleSubmit = async (e) => {
     setConfirmBirds("");
     setUnconfirmBirds("");
   };
+
+   // delete func
+    const handleDelet = async (id) => {
+      try {
+        await api.delete(`/post/${id}`);
+        let totalPersonnel = formData.filter((data) => data.id !== id);
+        setFormData(totalPersonnel);
+        localStorage.setItem("Personnel", JSON.stringify(totalPersonnel));
+      } catch (err) {
+        console.log(`Error: ${err.message}`);
+      }
+    };
   
   
   useEffect(() => {
@@ -477,6 +490,7 @@ const yearlyRunwayStats = useMemo(() => {
         index,
         images,
         userName,
+        handleDelet,
       }}
     >
       {children}

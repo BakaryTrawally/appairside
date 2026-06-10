@@ -8,28 +8,15 @@ import { useNavigate } from 'react-router-dom'
 
 
 const ViewData = () => {
-  // const navigate = useNavigate();
-  // const [isLoading, setIsLoading ] = useState(true) 
-  // const [fetchError, setFetchError] = useState(null);
-
-
+ 
   //prop drilled
   const {
     formData,
-    setFormData
+    setFormData,
+    handleDelet
     } = useContext(FormContext);
 
-   // delete func
-    const handleDelet = async (id) => {
-      try {
-        await api.delete(`/post/${id}`);
-        let totalPersonnel = formData.filter((data) => data.id !== id);
-        setFormData(totalPersonnel);
-        localStorage.setItem("Personnel", JSON.stringify(totalPersonnel));
-      } catch (err) {
-        console.log(`Error: ${err.message}`);
-      }
-    };
+  
 
  return (
   <div className=" overflow-auto rounded- border border-gray-200 shadow-lg">

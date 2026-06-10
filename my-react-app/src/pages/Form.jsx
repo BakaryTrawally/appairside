@@ -1,10 +1,12 @@
 import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import "../index.css"
 import '../App.css'
 import { FormContext } from "../pages/FormContext";
 
 
 export default function Form() {
+const navigate = useNavigate();
 const {
     date, setDate,
     operator, setOperator,
@@ -24,8 +26,17 @@ const {
     handleSubmit,
     error,
     errorField,
-    setErrorField                                                 
+    setErrorField,                                                 
   } = useContext(FormContext);
+
+  // handle submit
+   const submit = async (e) => {
+    const success = await handleSubmit(e);
+    if (success) {
+      navigate("/viewData");
+    }
+  };
+
 
   return ( 
     <div className="max-w-2xl relative mx-auto mt-2 bg-white/20 backdrop-blur-md small-6 rounded-xl shadow-lg border border-white/30">
@@ -33,7 +44,7 @@ const {
         Air Side Incident Details
       </h2>
 
-      <form onSubmit={handleSubmit} className="grid grid-cols-1 p-4 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <form onSubmit={submit} className="grid grid-cols-1 p-4 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div className="flex flex-col">
           <label className="mb text-xsm font-medium text-gray-700">
           Date
