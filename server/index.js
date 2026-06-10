@@ -10,7 +10,7 @@ const app = express();
 
 // Middleware
 // app.use(cors());
-const cors = require("cors");
+
 
 app.use(
   cors({
