@@ -49,6 +49,7 @@ const submit = async (e) => {
             <label htmlFor="name">Name</label>
             <input 
                 type="text"
+                id='name'
                 placeholder='Enter name'
                 className="form-control w-[1000px] text-capitalize bg-transparent border-bottom border-white shadow-none text-white"
             // className='form-control text-capitalize '  
@@ -59,6 +60,7 @@ const submit = async (e) => {
             <label htmlFor="email">User Name/Email</label>
             <input 
                 type="text"
+                id='email'
                 placeholder='Enter email'
                 className="form-control bg-transparent border-bottom border-white shadow-none text-white"
             onChange={(e) => setEmail(e.target.value)}    
@@ -68,6 +70,7 @@ const submit = async (e) => {
             <label htmlFor="password">Password</label>
             <input 
                 type="password"
+                id='password'
                 placeholder='Enter password'
                 className="form-control text-capitalize bg-transparent border-bottom border-white shadow-none text-white"
             onChange={(e) => setPassword(e.target.value)}    
