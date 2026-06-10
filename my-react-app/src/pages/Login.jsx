@@ -92,11 +92,6 @@ const {
         {/* Footer */}
         <p className="text-center text-sm text-gray-700 mt-6">
           Don’t have an account?{" "}
-          {/* <Link
-          to ="/register" 
-          className="text-red-300 hover:text-pink-400 font-medium">
-            back Home
-          </Link> */}
         </p>
       </div>
     </div>

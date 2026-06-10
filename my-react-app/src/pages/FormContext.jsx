@@ -1,4 +1,5 @@
 import React, { createContext, useState, useEffect, useMemo, useRef} from "react";
+import { useNavigate} from 'react-router-dom'
 import { } from 'react-router-dom'
 import api from "../birdstrikeApi/strikeData";
 import bg1 from "./images/airstrike.jpg";
@@ -43,7 +44,7 @@ export const FormProvider = ({ children }) => {
   const [reportType, setReportType] = useState("monthly");
   const [userName, setUserName] = useState("");
 
-  
+   const navigate = useNavigate();
 // print func
 const chartRef = useRef();
 const handlePrint = () => {
@@ -158,7 +159,7 @@ const handleSubmit = async (e) => {
         const response = await api.post("/post", formValues);
         // Efficient state update
         setFormData(prev => [...prev, response.data]);
-
+        navigate('/viewData')
       } catch (err) {
         console.log(err.message);
       }
