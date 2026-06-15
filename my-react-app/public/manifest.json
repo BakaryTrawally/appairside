@@ -1,38 +1,18 @@
 {
-  "short_name": "BirdStrike",
   "name": "Bird Strike Reporting System",
-  "description": "Bird Strike Reporting System for recording and managing bird strike incidents.",
+  "short_name": "BirdStrike",
   "start_url": "/",
-  "scope": "/",
   "display": "standalone",
-  "orientation": "portrait",
-  "theme_color": "#000000",
-  "background_color": "#ffffff",
-
   "icons": [
     {
-      "src": "/logo_192x192.png",
+      "src": "/logo192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/logo1254.png",
-      "sizes": "1254x1254",
+      "src": "/logo512.png",
+      "sizes": "512x512",
       "type": "image/png"
-    }
-  ],
-
-  "screenshots": [
-    {
-      "src": "/screenshot-mobile.png",
-      "sizes": "540x720",
-      "type": "image/png"
-    },
-    {
-      "src": "/screenshot-desktop.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "form_factor": "wide"
     }
   ]
 }
