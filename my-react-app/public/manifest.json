@@ -33,16 +33,16 @@
 
   "screenshots": [
     {
-      "src": "/screenshot-mobile.png",
+      "src": "/screenshot-mobile1086x1448.png",
       "type": "image/png",
-      "sizes": "225x225",
+      "sizes": "1086x1448",
       "form_factor": "narrow",
       "label": "Mobile view of AppAirSide"
     },
     {
-      "src": "/screenshot-desktop.png",
+      "src": "/screenshot-desktop-1280x720.png",
       "type": "image/png",
-      "sizes": "185x183",
+      "sizes": "1280x720",
       "form_factor": "wide",
       "label": "Desktop view of AppAirSide"
     }
