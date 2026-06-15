@@ -10,11 +10,7 @@
   "background_color": "#ffffff",
 
   "icons": [
-    {
-      "src": "/logo_192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
+
     {
       "src": "/logo1254.png",
       "sizes": "1254x1254",
@@ -25,14 +21,9 @@
   "screenshots": [
     {
       "src": "/screenshot-mobile.png",
-      "sizes": "540x720",
+      "sizes": "540x540",
       "type": "image/png"
-    },
-    {
-      "src": "/screenshot-desktop.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "form_factor": "wide"
     }
+   
   ]
 }
