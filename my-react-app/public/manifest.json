@@ -16,15 +16,9 @@
       "type": "image/png"
     },
     {
-      "src": "/logo512.png",
+      "src": "/logo1254.png",
       "sizes": "1254x1254",
       "type": "image/png"
-    },
-    {
-      "src": "/logo512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable any"
     }
   ],
 
