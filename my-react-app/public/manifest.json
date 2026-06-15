@@ -35,14 +35,14 @@
     {
       "src": "/screenshot-mobile.png",
       "type": "image/png",
-      "sizes": "185x183",
+      "sizes": "225x225",
       "form_factor": "narrow",
       "label": "Mobile view of AppAirSide"
     },
     {
       "src": "/screenshot-desktop.png",
       "type": "image/png",
-      "sizes": "225x225",
+      "sizes": "185x183",
       "form_factor": "wide",
       "label": "Desktop view of AppAirSide"
     }
