@@ -3,24 +3,24 @@
   "name": "Bird Strike Reporting System",
   "icons": [
     {
-      "src": "logo192.png",
-      "sizes": "154×148",
+      "src": "/logo192.png",
+      "sizes": "192×192",
       "type": "image/png"
     },
     {
-      "src": "logo512.png",
-      "sizes": "154×148",
+      "src": "/logo512.png",
+      "sizes": "512×512",
       "type": "image/png"
     }
   ],
   "screenshots": [
     {
-      "src": "screenshot-mobile.png",
+      "src": "/screenshot-mobile.png",
       "sizes": "540x720",
       "type": "image/png"
     },
     {
-      "src": "screenshot-desktop.png",
+      "src": "/screenshot-desktop.png",
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide"
