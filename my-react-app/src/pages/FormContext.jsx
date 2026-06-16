@@ -227,12 +227,23 @@ const images = [bg1, bg2, bg3, bg4, bg5, bg6, bg7, bg8, bg9];
 
 // display user name
   useEffect(() => {
+  const updateUser = () => {
     const storedUser = localStorage.getItem("user");
+
     if (storedUser) {
       const user = JSON.parse(storedUser);
-      setUserName(user.name); // Display name from backend
+      setUserName(user.name);
     }
-  }, []);
+  };
+
+  updateUser();
+
+  window.addEventListener("storage", updateUser);
+
+  return () => {
+    window.removeEventListener("storage", updateUser);
+  };
+}, []);
 
 
 
