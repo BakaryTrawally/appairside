@@ -22,13 +22,14 @@ const {
  const date = new Date();
  const handleSubmit= (e) =>{
      e.preventDefault();
-      api.post("/login", {email, password })
-     .then(user => {
-       if(user.data.status === "Success"){
-        localStorage.setItem("user", JSON.stringify(user.data)); 
-        navigate('/viewData')
-       }
-     })
+      api.post("/login", {name, email, password })
+     .then((res) => {
+  if (res.data.status === "Success") {
+    localStorage.setItem("user", JSON.stringify(res.data));
+    setName(res.data.name);
+    navigate("/viewData");
+  }
+});
   }
 
   return (  

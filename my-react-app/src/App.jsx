@@ -83,13 +83,19 @@ const {
         </NavLink>
       ))}
     </nav>
-  <div className="bg-red- border rounded-lg py-2 border border-gray-300 text-gray-700 w-1/2 b">
-    <Search
-    className="absolute left-1 top-1/2 -translate-y-1/2 text-white/70"
+   {/* Search Box */}
+  <div className="relative w-1/2">
+  <Search
+    className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-500"
     size={18}
-   />
-    {/* Search Bar */}
-  </div>
+  />
+
+  <input
+    type="text"
+    placeholder="Search bird strike data..."
+    className="w-full py-2 px-4 pl-8 border rounded-lg text-black focus:outline-none focus:ring-0 focus:border-gray-300"
+  />
+</div>
 
     <div className="ml-auto text-sm text-gray-600">
       Welcome{" "}

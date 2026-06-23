@@ -225,26 +225,14 @@ const images = [bg1, bg2, bg3, bg4, bg5, bg6, bg7, bg8, bg9];
     return () => clearInterval(interval); // cleanup
   }, []);
 
-// display user name
+//display user name
   useEffect(() => {
-  const updateUser = () => {
     const storedUser = localStorage.getItem("user");
-
     if (storedUser) {
       const user = JSON.parse(storedUser);
-      setUserName(user.name);
+      setUserName(user.name); // Display name from backend
     }
-  };
-
-  updateUser();
-
-  window.addEventListener("storage", updateUser);
-
-  return () => {
-    window.removeEventListener("storage", updateUser);
-  };
-}, []);
-
+  }, []);
 
 
  // useMemo is for performance optimization, which mean instead of rendering all data again just render the data that is been changed
