@@ -43,6 +43,8 @@ export const FormProvider = ({ children }) => {
   const [selectedYear, setSelectedYear] = useState(currentYear);
   const [reportType, setReportType] = useState("monthly");
   const [userName, setUserName] = useState("");
+  const [search, setSearch] = useState("");
+
 
 // print func
 const chartRef = useRef();
@@ -233,6 +235,20 @@ const images = [bg1, bg2, bg3, bg4, bg5, bg6, bg7, bg8, bg9];
       setUserName(user.name); // Display name from backend
     }
   }, []);
+
+  //search function
+  const filteredData = formData.filter((strike) => {
+    const date = new Date(strike.date).toLocaleDateString("en-GB");
+
+    return (
+      date.toLowerCase().includes(search.toLowerCase()) ||
+      strike.flight_operator?.toLowerCase().includes(search.toLowerCase()) ||
+      strike.aircraft?.toLowerCase().includes(search.toLowerCase()) ||
+      strike.incident_location?.toLowerCase().includes(search.toLowerCase()) ||
+      strike.run_way_used?.toLowerCase().includes(search.toLowerCase())
+    );
+  });
+
 
 
  // useMemo is for performance optimization, which mean instead of rendering all data again just render the data that is been changed
@@ -490,6 +506,9 @@ const yearlyRunwayStats = useMemo(() => {
         images,
         userName,
         handleDelet,
+        filteredData,
+        search,
+        setSearch
       }}
     >
       {children}

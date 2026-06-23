@@ -13,9 +13,13 @@ const ViewData = () => {
   const {
     formData,
     setFormData,
-    handleDelet
+    handleDelet, 
+    search,
+    filteredData
     } = useContext(FormContext);
 
+
+ 
   
 
  return (
@@ -54,7 +58,7 @@ const ViewData = () => {
           </thead>
 
           <tbody className="divide-y divide-gray-200">
-            {formData.map((strike, index) => (
+            {filteredData.map((strike, index) => (
               <tr
                 key={index}
                 className="  hover:bg-gray-50  border border-b border-gray-700 divide-x divide-gray-200  even:bg-gray-50/50"

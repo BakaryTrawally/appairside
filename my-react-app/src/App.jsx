@@ -53,6 +53,8 @@ const autoLogoutTime = 5 * 60 * 1000; // 5 minutes
 const {
   user,
  userName,
+ search,
+ setSearch
  } = useContext(FormContext);
 
 
@@ -86,14 +88,16 @@ const {
    {/* Search Box */}
   <div className="relative w-1/2">
   <Search
-    className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-500"
+    className="absolute left-1 top-1/2 -translate-y-1/2 text-gray-500"
     size={18}
   />
 
   <input
     type="text"
-    placeholder="Search bird strike data..."
-    className="w-full py-2 px-4 pl-8 border rounded-lg text-black focus:outline-none focus:ring-0 focus:border-gray-300"
+    value={search}
+    onChange={(e) => setSearch(e.target.value)}
+    placeholder="Search by data, fligt operator, aircraft, incident location, r/way ..."
+    className="w-full py-1 px-4 pl-8 border rounded-lg text-black focus:outline-none focus:ring-0 focus:border-gray-300"
   />
 </div>
 
