@@ -3,13 +3,14 @@ import "./index.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./pages/Footer";
-import { NavLink, Outlet, useNavigate  } from "react-router-dom";
+import { NavLink, Outlet, useNavigate, useLocation } from "react-router-dom";
 import { FormContext } from "./pages/FormContext";
 import { Search } from "lucide-react";
 
 
 function App() {
    const navigate = useNavigate();
+   const location = useLocation();
 
 
 const handleLogout = () => {
@@ -86,20 +87,22 @@ const {
       ))}
     </nav>
    {/* Search Box */}
-  <div className="relative w-1/2">
-  <Search
-    className="absolute left-1 top-1/2 -translate-y-1/2 text-gray-500"
-    size={18}
-  />
+   {location.pathname === "/viewData" && (
+    <div className="relative w-1/2">
+      <Search
+        className="absolute left-1 top-1/2 -translate-y-1/2 text-gray-500"
+        size={18}
+      />
 
-  <input
-    type="text"
-    value={search}
-    onChange={(e) => setSearch(e.target.value)}
-    placeholder="Search by data, fligt operator, aircraft, incident location, r/way ..."
-    className="w-full py-1 px-4 pl-8 border rounded-lg text-black focus:outline-none focus:ring-0 focus:border-gray-300"
-  />
-</div>
+      <input
+        type="text"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        placeholder="Search by date, flight operator, aircraft, location, runway..."
+        className="w-full py-1 px-4 pl-8 border rounded-lg text-black focus:outline-none focus:ring-0 focus:border-gray-300"
+      />
+      </div>
+    )}
 
     <div className="ml-auto text-sm text-gray-600">
       Welcome{" "}
