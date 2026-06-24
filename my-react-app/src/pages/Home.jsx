@@ -28,16 +28,9 @@ export default function LandingPage() {
         </p>
 
         <div className="flex gap-4">
-          {/* <Link
-            to="/login"
-            className="bg-white !no-underline text-indigo-600 px-6 py-3 rounded-xl font-semibold shadow hover:bg-gray-100 transition"
-          >
-           Go to Login 
-          </Link> */}
-
           <Link
             to="/login"
-            className="border !no-underline border-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-gray-700 transition"
+            className="border !no-underline border-white px-6 py-3 rounded-xl font-semibold hover:bg-white text-white hover:text-gray-700 transition"
           >
             Go to Login 
           </Link>
