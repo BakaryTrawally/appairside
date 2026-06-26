@@ -30,7 +30,8 @@ export default function LandingPage() {
         <div className="flex gap-4">
           <Link
             to="/login"
-            className="border !no-underline border-white px-6 py-3 rounded-xl font-semibold hover:bg-white text-white hover:text-gray-700 transition"
+            className="border !no-underline border-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-black text-white transition login-text"
+            
           >
             Go to Login 
           </Link>

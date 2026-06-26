@@ -206,3 +206,8 @@ nav > ul  {
   background-size: cover;
   
 }
+
+.login-text:hover{
+  color: black;
+  
+}
