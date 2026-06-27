@@ -98,7 +98,7 @@ const {
         type="text"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        placeholder="Search for date, flight operator, aircraft, location, runway..."
+        placeholder="Search for date=mm/year, flight operator, aircraft, location, runway..."
         className="w-full py-1 px-4 pl-8 border rounded-lg text-black focus:outline-none focus:ring-0 focus:border-gray-300"
       />
       </div>
